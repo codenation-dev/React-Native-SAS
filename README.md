@@ -1,4 +1,4 @@
-# #AceleraDev > React Native SAS
+# AceleraDev > React Native SAS
 
 Projeto destinado para centralizar o codigo dos desafios
 feito durante as aulas que aconteceram durante o programa #AceleraDev
@@ -165,3 +165,8 @@ ou pra garantir que você fez tudo corretamente até aqui, pois as diferenças l
 - Após clicar no botão, como instruído acima, irá aparecer pra você algumas opções de texto para serem preenchidos, então, você deverá preencher as caixas de textos e demais opções, conforme a instruído na imagem abaixo:
 
 ![GitHub Create Pull request](docs/images/github-create-pull-request.gif)
+
+- Assim que você criar sua PR, você notará que estará definido como reviewers na PR, o @renatobenks e a @marianesantana para a revisão do código.
+Então, assim que a solução da PR estiver completa, nos avise para que possamos aprovar a PR, e você posssa mergêa-la, através do botão de merge da PR, que se encontra no rodapé da página da PR como demarcado na imagem abaixo:
+
+![GitHub Merge Pull Request](docs/images/github-merge-pull-request.png)
