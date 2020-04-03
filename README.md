@@ -166,7 +166,7 @@ ou pra garantir que você fez tudo corretamente até aqui, pois as diferenças l
 
 ![GitHub Create Pull request](docs/images/github-create-pull-request.gif)
 
-- Assim que você criar sua PR, você notará que estará definido como reviewers na PR, o @renatobenks e a @marianesantana para a revisão do código.
+- Assim que você criar sua PR, você notará que estará definido como reviewers na PR, o [@renatobenks](https://github.com/renatobenks) e a [@marianesantana](https://github.com/marianesantana) para a revisão do código.
 Então, assim que a solução da PR estiver completa, nos avise para que possamos aprovar a PR, e você posssa mergêa-la, através do botão de merge da PR, que se encontra no rodapé da página da PR como demarcado na imagem abaixo:
 
 ![GitHub Merge Pull Request](docs/images/github-merge-pull-request.png)
