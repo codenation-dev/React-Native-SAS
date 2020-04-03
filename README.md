@@ -12,9 +12,9 @@ Instruções
 ---
 
 1. [Preparando o ambiente](#preparando-o-ambiente)
-2. [Começando a contribuir](#comecando-a-contribuir)
-3. [Criando a solução](#criando-a-solucao)
-4. [Submetendo a solução](#submetendo-a-solucao)
+2. [Começando a contribuir](#começando-a-contribuir)
+3. [Criando a solução](#criando-a-solução)
+4. [Submetendo a solução](#submetendo-a-solução)
 
 ### Preparando o ambiente
 
@@ -165,4 +165,3 @@ ou pra garantir que você fez tudo corretamente até aqui, pois as diferenças l
 - Após clicar no botão, como instruído acima, irá aparecer pra você algumas opções de texto para serem preenchidos, então, você deverá preencher as caixas de textos e demais opções, conforme a instruído na imagem abaixo:
 
 ![GitHub Create Pull request](docs/images/github-create-pull-request.gif)
-
