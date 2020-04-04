@@ -9,8 +9,15 @@ import ForwardStep from '../ForwardStep/ForwardStep';
 
 import {colors} from '../../styles';
 
-const Steps = ({children, steps: [firstStep, ...nextSteps]}) => {
+const Steps = ({
+  children,
+  steps: [firstStep, ...nextSteps],
+  onFinish,
+  LockStep,
+  stepBlocked,
+}) => {
   const [currentStep, setCurrentStep] = React.useState(firstStep);
+
   const [nextStep] = nextSteps;
 
   const stepsToGo = React.useMemo(
@@ -32,11 +39,25 @@ const Steps = ({children, steps: [firstStep, ...nextSteps]}) => {
     stepsToGo,
   ]);
 
-  const forwardStep = () => setCurrentStep(nextCurrentStep);
+  const forwardStep = () => {
+    if (stepBlocked) {
+      console.log(stepBlocked);
+      return;
+    }
+    if (currentStep.id === nextSteps[nextSteps.length - 1].id) {
+      onFinish();
+      return;
+    }
+
+    LockStep();
+    setCurrentStep(nextCurrentStep);
+  };
 
   return (
     <View style={styles.content}>
-      <ScrollView style={styles.steps} contentInsetAdjustmentBehavior="automatic">
+      <ScrollView
+        style={styles.steps}
+        contentInsetAdjustmentBehavior="automatic">
         {children({currentStep})}
       </ScrollView>
       <View style={styles.stepActions}>
