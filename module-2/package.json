@@ -29,5 +29,8 @@
     "metro-react-native-babel-preset": "^0.56.0",
     "react-native-debugger-open": "^0.3.24",
     "react-test-renderer": "16.9.0"
+  },
+  "peerDependencies": {
+    "minimist": "^1.2.5"
   }
 }
