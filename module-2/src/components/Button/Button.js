@@ -24,6 +24,7 @@ const Button = ({
   secondary,
   color: colorProp,
   onPress,
+  finished
 }) => {
   const colorStyle =
     getColorStyleByProps({
@@ -37,14 +38,15 @@ const Button = ({
     <TouchableHighlight
       accessibilityRole="button"
       underlayColor="transparent"
-      style={[styles.button, colorStyle.button]}
-      onPress={onPress}>
+      style={[styles.button, colorStyle.button, finished && styles.disabled]}
+      onPress={onPress}
+      disabled={finished}>
       <Text
         style={[
           style,
           styles.text,
           colorStyle.text,
-          colorProp && getFontColorStyle(colorProp),
+          colorProp && getFontColorStyle(colorProp)
         ]}>
         {children}
       </Text>
@@ -75,6 +77,9 @@ const styles = {
   [`text${color.dark}`]: getFontColorStyle(color.light),
   [`text${color.primary}`]: getFontColorStyle(color.light),
   [`text${color.secondary}`]: getFontColorStyle(color.light),
+  disabled: {
+    backgroundColor: '#999'
+  }
 };
 
 Button.defaultProps = {
