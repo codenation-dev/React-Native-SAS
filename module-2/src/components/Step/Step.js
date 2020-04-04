@@ -8,7 +8,7 @@ import {View} from 'react-native';
 
 import styles from '../../styles';
 
-const Step = ({children}) => {
+const Step = ({ children }) => {
   return (
     <View style={styles.sectionContainer}>
       {children}

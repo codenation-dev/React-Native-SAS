@@ -15,22 +15,31 @@ if (__DEV__ && Platform.OS === PLATFORM.IOS) {
   NativeModules.DevSettings.setIsDebuggingRemotely(true);
 }
 
+export const StatusContext = React.createContext()
+
 const App = () => {
+  const [isEnabled, setIsEnabled] = React.useState([]);  
+  const [block, setBlock] = React.useState(false);
   const [isLookingSteps, setAsLookingSteps] = React.useState(false);
 
   const startLookingToSteps = () => setAsLookingSteps(true);
-  const finishLookingToSteps = () => setAsLookingSteps(false);
+
+  React.useEffect(() => {
+    if(block === true) setAsLookingSteps(false);
+  })
 
   return (
     <React.Fragment>
-      <StatusBar barStyle="light-content" />
-      <SafeAreaView style={styles.safeArea}>
-        {isLookingSteps ? (
-          <LookSteps onFinish={finishLookingToSteps} />
-        ) : (
-          <Home onStart={startLookingToSteps} />
-        )}
-      </SafeAreaView>
+      <StatusContext.Provider value={{isEnabled, setIsEnabled, block, setBlock}}>
+        <StatusBar barStyle="light-content" />
+          <SafeAreaView style={styles.safeArea}>
+            {isLookingSteps ? (
+              <LookSteps/>
+            ) : (
+              <Home onStart={startLookingToSteps} />
+            )}
+          </SafeAreaView>
+      </StatusContext.Provider>
     </React.Fragment>
   );
 };

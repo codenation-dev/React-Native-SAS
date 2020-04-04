@@ -92,6 +92,34 @@ const styles = StyleSheet.flatten([
       getFontColorStyle(color.dark),
       getFontSizeStyle(sizes.small),
     ]),
+    instructionsContainer: {
+      marginLeft: 10
+    },
+    instructionsTitle: StyleSheet.flatten([
+      {
+        fontSize: 14,
+        marginTop: 30,
+        marginBottom: 30
+      },
+      getFontColorStyle(color.primary),
+    ]),
+    eachInstructionContainer: {
+      display:  'flex',
+      flexDirection: 'row',
+      alignItems: 'center'
+    },
+    instructionText: {
+      fontSize: 14,
+      marginTop: 10,
+      marginBottom: 10,
+      marginLeft: 15
+    },
+    instructionTextExecuted: {
+      textDecorationLine: 'line-through',
+      marginTop: 10,
+      marginBottom: 10,
+      marginLeft: 15
+    }
   },
 ]);
 
