@@ -30,7 +30,7 @@ aprendidos em aula, ou através das fontes de referência passadas em aula.
 
 ### Tarefas
 
-- [ ] Adicionar a listagem de instruções na tela para cada passo apresentado
+- [x] ~~Adicionar a listagem de instruções na tela para cada passo apresentado~~
 
 ![Task 1](.docs/task-1.png)
 
@@ -47,8 +47,8 @@ não sendo possível desmarcar após completar a instrução
 
 ![Task 4](.docs/task-4.png)
 
-- [ ] Ao finalizar as instruções de todos os passos, deve-se mostrar novamente a tela inicial (`<Home />`)
-e não deve ser possível voltar a tela de passos
+- [x] ~~Ao finalizar as instruções de todos os passos, deve-se mostrar novamente a tela inicial (`<Home />`)
+e não deve ser possível voltar a tela de passos~~
 
 Instruções
 ---
