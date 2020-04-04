@@ -5,6 +5,7 @@
   "scripts": {
     "postinstall": "cp .rndebuggerrc ~/.rndebuggerrc && rndebugger-open",
     "start": "react-native start",
+    "android": "react-native run-android",
     "test": "jest --verbose --runInBand",
     "test:coverage": "jest --verbose --runInBand --coverage",
     "test:watch": "jest --verbose --watch",

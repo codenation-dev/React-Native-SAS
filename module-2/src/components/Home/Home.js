@@ -12,7 +12,7 @@ import Content from '../Content/Content';
 
 import {color} from '../../styles';
 
-const Home = ({onStart}) => {
+const Home = ({onStart, renderStart}) => {
   return (
     <React.Fragment>
       <Header />
@@ -22,13 +22,18 @@ const Home = ({onStart}) => {
           <Text style={styles.text}>
             Parabéns por você fazer parte do programa #AceleraDev sobre React
             Native, estamos muito felizes de ter você por aqui.
-            {'\n\n'}
-            Aqui você vai encontrar os próximos passos que você precisa dar para
-            estar tudo certo para iniciar as aulas do programa. Bora lá?!
           </Text>
-          <Button primary={true} onPress={onStart}>
-            VAMOS LÁ
-          </Button>
+          {renderStart ? (
+            <>
+              <Text style={styles.text}>
+                Aqui você vai encontrar os próximos passos que você precisa dar para
+                estar tudo certo para iniciar as aulas do programa. Bora lá?!
+              </Text>
+              <Button primary={true} onPress={onStart}>
+                VAMOS LÁ
+              </Button>
+            </>
+          ) : void 0}
         </View>
       </Content>
     </React.Fragment>
@@ -41,7 +46,7 @@ const styles = {
     paddingHorizontal: 15,
   },
   text: {
-    marginVertical: 25,
+    marginVertical: 15,
   },
 };
 

@@ -17,9 +17,13 @@ if (__DEV__ && Platform.OS === PLATFORM.IOS) {
 
 const App = () => {
   const [isLookingSteps, setAsLookingSteps] = React.useState(false);
+  const [areStepsCompleted, setStepsCompleted] = React.useState(false);
 
   const startLookingToSteps = () => setAsLookingSteps(true);
-  const finishLookingToSteps = () => setAsLookingSteps(false);
+  const finishLookingToSteps = () => {
+    setAsLookingSteps(false);
+    setStepsCompleted(true);
+  };
 
   return (
     <React.Fragment>
@@ -28,7 +32,7 @@ const App = () => {
         {isLookingSteps ? (
           <LookSteps onFinish={finishLookingToSteps} />
         ) : (
-          <Home onStart={startLookingToSteps} />
+          <Home onStart={startLookingToSteps} renderStart={!areStepsCompleted}/>
         )}
       </SafeAreaView>
     </React.Fragment>
