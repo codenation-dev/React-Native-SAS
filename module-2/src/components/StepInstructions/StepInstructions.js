@@ -26,3 +26,17 @@ const StepInstructions = ({instructions, renderInstruction}) => {
   );
 };
 
+const styles = {
+  instructions: {
+    flex: 1,
+    marginVertical: 15,
+  },
+  text: {
+    color: '#7159c1',
+    fontWeight: 'bold',
+    fontSize: 16,
+    marginTop: 10,
+  },
+};
+
+export default StepInstructions;
