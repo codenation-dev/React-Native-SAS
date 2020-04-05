@@ -11,6 +11,12 @@ const StepInstruction = ({children}) => {
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   return (
     <View style={styles.instruction}>
+      <Switch
+        trackColor={{false: '#ff6961', true: '#00ff00'}}
+        thumbColor={isEnabled ? '#f4f3f4' : '#f4f3f4'}
+        ios_backgroundColor="#3e3e3e"
+        onValueChange={toggleSwitch}
+        value={isEnabled}
       />
       <Text
         style={
