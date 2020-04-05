@@ -9,7 +9,7 @@ import ForwardStep from '../ForwardStep/ForwardStep';
 
 import {colors} from '../../styles';
 
-const Steps = ({children, steps: [firstStep, ...nextSteps]}) => {
+const Steps = ({children, steps: [firstStep, ...nextSteps], onForward}) => {
   const [currentStep, setCurrentStep] = React.useState(firstStep);
   const [nextStep] = nextSteps;
 
@@ -27,21 +27,29 @@ const Steps = ({children, steps: [firstStep, ...nextSteps]}) => {
     [firstStep, nextStep, nextSteps],
   );
 
-  const nextCurrentStep = React.useMemo(() => stepsToGo[currentStep.id], [
+  const nextStepAsCurrent = React.useMemo(() => stepsToGo[currentStep.id], [
     currentStep,
     stepsToGo,
   ]);
 
-  const forwardStep = () => setCurrentStep(nextCurrentStep);
+  const forwardStep = () => {
+    setCurrentStep(nextStepAsCurrent);
+
+    if (onForward) {
+      onForward(currentStep);
+    }
+  };
 
   return (
     <View style={styles.content}>
-      <ScrollView style={styles.steps} contentInsetAdjustmentBehavior="automatic">
+      <ScrollView
+        style={styles.steps}
+        contentInsetAdjustmentBehavior="automatic">
         {children({currentStep})}
       </ScrollView>
       <View style={styles.stepActions}>
         <ForwardStep onForward={forwardStep}>
-          {nextCurrentStep.id === firstStep.id
+          {nextStepAsCurrent.id === firstStep.id
             ? 'VOLTAR AO INICIO'
             : 'PROXIMO PASSO'}
         </ForwardStep>
