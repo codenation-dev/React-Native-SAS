@@ -12,7 +12,7 @@ import Content from '../Content/Content';
 
 import {color} from '../../styles';
 
-const Home = ({onStart}) => {
+const Home = ({onStart, isFinished}) => {
   return (
     <React.Fragment>
       <Header />
@@ -26,7 +26,7 @@ const Home = ({onStart}) => {
             Aqui você vai encontrar os próximos passos que você precisa dar para
             estar tudo certo para iniciar as aulas do programa. Bora lá?!
           </Text>
-          <Button primary={true} onPress={onStart}>
+          <Button disabled={isFinished} primary={true} onPress={onStart}>
             VAMOS LÁ
           </Button>
         </View>
