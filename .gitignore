@@ -105,8 +105,9 @@ dist
 # TernJS port file
 .tern-port
 
-# JetBrains
+# Editors
 .idea/
+.vscode/
 
 # Internal automated scripts
 scripts/
