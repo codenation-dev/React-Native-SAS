@@ -11,6 +11,11 @@ const StepInstructions = ({instructions, renderInstruction}) => {
   const toggleTouchable = () => setIsEnabled(previousState => !previousState);
   return (
     <View style={styles.instructions}>
+      <TouchableOpacity onPress={toggleTouchable}>
+        <Text style={styles.text}>
+          {!isEnabled ? 'MOSTRAR INSTRUÇÕES' : 'ESCONDER INSTRUÇÕES'}
+        </Text>
+      </TouchableOpacity>
       <FlatList
         data={instructions}
         renderItem={({item}) => renderInstruction(item)}
