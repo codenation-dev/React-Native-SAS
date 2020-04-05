@@ -16,7 +16,13 @@ import {color} from '../../styles';
 
 import steps from '../../steps.json';
 
-const LookSteps = () => {
+const LookSteps = ({onFinish}) => {
+  const onForwardStep = currentStep => {
+    if (steps.indexOf(currentStep) === steps.length - 1) {
+      onFinish();
+    }
+  };
+
   return (
     <React.Fragment>
       <Header>
