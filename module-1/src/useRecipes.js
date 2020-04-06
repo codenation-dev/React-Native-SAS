@@ -10,7 +10,7 @@ const mapRecipe = () => recipe => ({
   ingredients: recipe.ingredients.split(', '),
 });
 
-const retrieveResults = () => data => data.results;
+const retrieveResults = () => data => data.results.map(mapRecipe());
 
 const fetchRecipes = () =>
   fetch('http://www.recipepuppy.com/api/')

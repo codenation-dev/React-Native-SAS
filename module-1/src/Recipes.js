@@ -6,19 +6,9 @@ import * as React from 'react';
 import {Text, View} from 'react-native';
 
 const Recipes = ({recipes}) => {
-  const allIngredients = recipes.reduce(
-    (ingredients, recipe) => [
-      ...ingredients,
-      ...recipe.ingredients.filter(
-        ingredient => !ingredients.includes(ingredient),
-      ),
-    ],
-    [],
-  );
-
   return (
     <View testID="recipes">
-      {recipes.slice(1).map(recipe => (
+      {recipes.map(recipe => (
         <View
           testID="recipe"
           key={recipe.url}
@@ -36,10 +26,10 @@ const Recipes = ({recipes}) => {
               fontWeight: '400',
               color: '#444',
             }}>
-            {recipe.href}
+            {recipe.url}
           </Text>
           <View testID="ingredients">
-            {allIngredients.map((ingredient, i) => (
+            {recipe.ingredients.map((ingredient, i) => (
               <Text
                 testID="ingredient"
                 key={i + ingredient}
