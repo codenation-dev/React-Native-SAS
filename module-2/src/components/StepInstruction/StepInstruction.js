@@ -3,11 +3,10 @@
  */
 
 import * as React from 'react';
-import {useState} from 'react';
 import {Text, View, Switch} from 'react-native';
 
 const StepInstruction = ({children}) => {
-  const [isEnabled, setIsEnabled] = useState(false);
+  const [isEnabled, setIsEnabled] = React.useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   return (
     <View style={styles.instruction}>
