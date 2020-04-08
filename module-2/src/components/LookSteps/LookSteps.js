@@ -28,6 +28,29 @@ const LookSteps = () => {
             <Step key={currentStep.id}>
               <StepTitle>{currentStep.name}</StepTitle>
               <StepDescription>{currentStep.text}</StepDescription>
+              <View>
+              <Button onPress={visibilityList}>
+                {visibleList ? 'Esconder' : 'Mostrar'} Instruções
+              </Button>            
+              {visibleList &&(               
+                 <FlatList 
+                 data={currentStep.instructions}                 
+                 keyExtractor={(item) => item.id.toString()}
+                 renderItem={({item}) =>
+                 <React.Fragment>
+                   <View>
+                     <Switch 
+                      value={isFinished}
+                      disabled={isFinished}
+                      onChange={finishedTask}
+                     />
+                   </View>
+                   <Text style={styles2.text, isFinished && texts.strikeThrough}>item.text</Text>
+                 </React.Fragment>
+                 }
+               />
+              )}           
+              </View>
             </Step>
           )}
         </Steps>
@@ -35,5 +58,19 @@ const LookSteps = () => {
     </React.Fragment>
   );
 };
+
+const styles2 = {
+  instruction: {
+    flex:1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 15,
+  },
+  text: {
+    marginHorizontal: 10,
+    flex: 1
+  }
+}
 
 export default LookSteps;
