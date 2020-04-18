@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="33" failures="0" time="4.51">
+  <testsuite name="validation: trivial" errors="0" failures="0" skipped="0" timestamp="2020-03-20T18:40:15" time="3.865" tests="33">
+    <testcase classname="validation: trivial when the app status bar is rendering renders status into app root" name="validation: trivial when the app status bar is rendering renders status into app root" time="0.755">
+    </testcase>
+    <testcase classname="validation: trivial when the app status bar is rendering renders the customized status bar as dark" name="validation: trivial when the app status bar is rendering renders the customized status bar as dark" time="0.004">
+    </testcase>
+    <testcase classname="validation: trivial when the app content is rendering renders content as scrolling with automatic adjustment behaviour" name="validation: trivial when the app content is rendering renders content as scrolling with automatic adjustment behaviour" time="0.004">
+    </testcase>
+    <testcase classname="validation: regressive when the app is rendering uses the recipes to be rendered as listing" name="validation: regressive when the app is rendering uses the recipes to be rendered as listing" time="0.004">
+    </testcase>
+    <testcase classname="validation: regressive when the app content is rendering renders the app content as a safe area view" name="validation: regressive when the app content is rendering renders the app content as a safe area view" time="0.003">
+    </testcase>
+    <testcase classname="validation: regressive when the app content is rendering renders the app as a scrolling content" name="validation: regressive when the app content is rendering renders the app as a scrolling content" time="0.005">
+    </testcase>
+    <testcase classname="validation: regressive when the app content is rendering renders the app content with background as whitesmoke" name="validation: regressive when the app content is rendering renders the app content with background as whitesmoke" time="0.003">
+    </testcase>
+    <testcase classname="validation: regressive when the app content is rendering renders into app content respectively the both header and main content" name="validation: regressive when the app content is rendering renders into app content respectively the both header and main content" time="0.004">
+    </testcase>
+    <testcase classname="validation: regressive when the app main content is rendering renders the main content with the recipes listing" name="validation: regressive when the app main content is rendering renders the main content with the recipes listing" time="0.003">
+    </testcase>
+    <testcase classname="validation: regressive when the app main content is rendering renders the main content with background as white" name="validation: regressive when the app main content is rendering renders the main content with background as white" time="0.004">
+    </testcase>
+    <testcase classname="validation: regressive when the recipes are rendering in the main content renders the recipes listing used as loaded" name="validation: regressive when the recipes are rendering in the main content renders the recipes listing used as loaded" time="0.007">
+    </testcase>
+    <testcase classname="validation: regressive when the recipes are rendering in the main content renders the same counting of recipes" name="validation: regressive when the recipes are rendering in the main content renders the same counting of recipes" time="0.013">
+    </testcase>
+    <testcase classname="validation: regressive when the recipes title are rendering renders the recipes title" name="validation: regressive when the recipes title are rendering renders the recipes title" time="0.005">
+    </testcase>
+    <testcase classname="validation: regressive when the recipes title are rendering renders the recipes title as text" name="validation: regressive when the recipes title are rendering renders the recipes title as text" time="0.005">
+    </testcase>
+    <testcase classname="validation: regressive when the recipes title are rendering renders the recipes title with font size as 24" name="validation: regressive when the recipes title are rendering renders the recipes title with font size as 24" time="0.006">
+    </testcase>
+    <testcase classname="validation: regressive when the recipes title are rendering renders the recipes title with font as bold" name="validation: regressive when the recipes title are rendering renders the recipes title with font as bold" time="0.006">
+    </testcase>
+    <testcase classname="validation: regressive when the recipes title are rendering renders the recipes title with color as black" name="validation: regressive when the recipes title are rendering renders the recipes title with color as black" time="0.006">
+    </testcase>
+    <testcase classname="validation: regressive when the recipes url are rendering renders the recipes url" name="validation: regressive when the recipes url are rendering renders the recipes url" time="0.004">
+    </testcase>
+    <testcase classname="validation: regressive when the recipes url are rendering renders the recipes url as text" name="validation: regressive when the recipes url are rendering renders the recipes url as text" time="0.006">
+    </testcase>
+    <testcase classname="validation: regressive when the recipes url are rendering renders the recipes url with margin to top as 8" name="validation: regressive when the recipes url are rendering renders the recipes url with margin to top as 8" time="0.007">
+    </testcase>
+    <testcase classname="validation: regressive when the recipes url are rendering renders the recipes url with font size as 18" name="validation: regressive when the recipes url are rendering renders the recipes url with font size as 18" time="0.007">
+    </testcase>
+    <testcase classname="validation: regressive when the recipes url are rendering renders the recipes url with font as semi-bold" name="validation: regressive when the recipes url are rendering renders the recipes url with font as semi-bold" time="0.006">
+    </testcase>
+    <testcase classname="validation: regressive when the recipes url are rendering renders the recipes url with color as gray-black" name="validation: regressive when the recipes url are rendering renders the recipes url with color as gray-black" time="0.005">
+    </testcase>
+    <testcase classname="validation: regressive when the recipes ingredients are rendering renders the recipes ingredients" name="validation: regressive when the recipes ingredients are rendering renders the recipes ingredients" time="0.006">
+    </testcase>
+    <testcase classname="validation: regressive when the recipes ingredients are rendering renders the recipes ingredients as a block" name="validation: regressive when the recipes ingredients are rendering renders the recipes ingredients as a block" time="0.008">
+    </testcase>
+    <testcase classname="validation: regressive when the recipes ingredients are rendering renders all the ingredients listing from recipes" name="validation: regressive when the recipes ingredients are rendering renders all the ingredients listing from recipes" time="0.01">
+    </testcase>
+    <testcase classname="validation: regressive when the recipes ingredients are rendering renders all the ingredients from recipes" name="validation: regressive when the recipes ingredients are rendering renders all the ingredients from recipes" time="0.006">
+    </testcase>
+    <testcase classname="validation: regressive when the recipes ingredients are rendering renders all the ingredients from recipes with font as ultra bold" name="validation: regressive when the recipes ingredients are rendering renders all the ingredients from recipes with font as ultra bold" time="0.009">
+    </testcase>
+    <testcase classname="validation: regressive when the recipes ingredients are rendering renders all the ingredients from recipes as a listing with symbol markup" name="validation: regressive when the recipes ingredients are rendering renders all the ingredients from recipes as a listing with symbol markup" time="0.009">
+    </testcase>
+    <testcase classname="validation: tasks when the app is rendering and the recipes were loaded from data api renders all recipes been fetched" name="validation: tasks when the app is rendering and the recipes were loaded from data api renders all recipes been fetched" time="0.04">
+    </testcase>
+    <testcase classname="validation: tasks when the app is rendering and the recipes were loaded from data api renders the first recipe as been fetched" name="validation: tasks when the app is rendering and the recipes were loaded from data api renders the first recipe as been fetched" time="0.033">
+    </testcase>
+    <testcase classname="validation: tasks when the app is rendering and the recipes were loaded from data api renders all urls to every recipes" name="validation: tasks when the app is rendering and the recipes were loaded from data api renders all urls to every recipes" time="0.029">
+    </testcase>
+    <testcase classname="validation: tasks when the app is rendering and the recipes were loaded from data api renders all ingredients to every recipes" name="validation: tasks when the app is rendering and the recipes were loaded from data api renders all ingredients to every recipes" time="0.035">
+    </testcase>
+  </testsuite>
+</testsuites>
