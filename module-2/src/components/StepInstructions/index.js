@@ -79,13 +79,12 @@ const styles = {
     color: colors.primary,
     fontSize: 20,
     fontWeight: 'bold',
-    marginBotton: 10,
     marginTop: 20,
   },
   instruction: {
-    marginBotton: 20,
     padding: 5,
     flexDirection: 'row',
+    marginBotton: '20',
   },
   chekedInstructionText: {
     textDecorationLine: 'line-through',
