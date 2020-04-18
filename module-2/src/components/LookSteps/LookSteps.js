@@ -3,6 +3,8 @@
  */
 
 import * as React from 'react';
+import { View, Switch, FlatList, Text, SafeAreaView} from 'react-native';
+import Button from '../Button/Button';
 
 import Step from '../Step/Step';
 import StepTitle from '../StepTitle/StepTitle';
@@ -11,12 +13,16 @@ import Steps from '../Steps/Steps';
 import Subtitle from '../Subtitle/Subtitle';
 import Header from '../Header/Header';
 import Content from '../Content/Content';
+import FlatListItem from '../FlatListItem/FlatListItem'
 
 import {color} from '../../styles';
 
 import steps from '../../steps.json';
 
 const LookSteps = () => {
+  const [visibleList, setVisibility] = React.useState(false);
+  const visibilityList = () => setVisibility(!visibleList);
+ 
   return (
     <React.Fragment>
       <Header>
@@ -28,29 +34,22 @@ const LookSteps = () => {
             <Step key={currentStep.id}>
               <StepTitle>{currentStep.name}</StepTitle>
               <StepDescription>{currentStep.text}</StepDescription>
-              <View>
+              <SafeAreaView>
               <Button onPress={visibilityList}>
                 {visibleList ? 'Esconder' : 'Mostrar'} Instruções
               </Button>            
               {visibleList &&(               
                  <FlatList 
-                 data={currentStep.instructions}                 
-                 keyExtractor={(item) => item.id.toString()}
-                 renderItem={({item}) =>
-                 <React.Fragment>
-                   <View>
-                     <Switch 
-                      value={isFinished}
-                      disabled={isFinished}
-                      onChange={finishedTask}
-                     />
-                   </View>
-                   <Text style={styles2.text, isFinished && texts.strikeThrough}>item.text</Text>
-                 </React.Fragment>
-                 }
-               />
+                  data={currentStep.instructions}                 
+                  keyExtractor={(item) => item.id.toString()}
+                  renderItem={({item}) => {                  
+                   return(
+                    <FlatListItem item={item}/>
+                   )
+                  }}           
+                />
               )}           
-              </View>
+              </SafeAreaView>
             </Step>
           )}
         </Steps>
@@ -59,18 +58,5 @@ const LookSteps = () => {
   );
 };
 
-const styles2 = {
-  instruction: {
-    flex:1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginTop: 15,
-  },
-  text: {
-    marginHorizontal: 10,
-    flex: 1
-  }
-}
 
 export default LookSteps;
