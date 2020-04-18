@@ -40,7 +40,7 @@ const Steps = ({
         )}
 
         <ForwardStep onClick={Foward}>
-          {currentStepId === lastStepId ? 'VOLTAR AO INICIO' : 'PROXIMO PASSO'}
+          {currentStepId === lastStepId ? 'FINALIZAR' : 'PROXIMO PASSO'}
         </ForwardStep>
       </View>
     </View>
@@ -64,7 +64,7 @@ const styles = {
     height: 90,
     backgroundColor: colors.primary,
     flexDirection: 'row',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 15,
   },

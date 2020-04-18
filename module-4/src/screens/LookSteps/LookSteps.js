@@ -14,7 +14,7 @@ import Subtitle from '../../components/Subtitle/Subtitle';
 import StepInstructions from '../../components/StepInstructions/StepInstructions';
 import StepInstruction from '../../components/StepInstruction/StepInstruction';
 
-import {ONBOARDING_HOME, ONBOARDING_LOOK_STEPS} from '../../router/routes';
+import {CONGRATULATIONS, ONBOARDING_LOOK_STEPS} from '../../router/routes';
 
 import {color} from '../../styles';
 
@@ -23,8 +23,8 @@ import steps from '../../steps.json';
 const LookSteps = ({route, navigation}) => {
   const {stepID = 1} = route.params;
 
-  const goBackToHome = () =>
-    navigation.navigate(ONBOARDING_HOME, {isStepsCompleted: true});
+  const goToCongratulations = () =>
+    navigation.navigate(CONGRATULATIONS, {isStepsCompleted: true});
 
   const onForwardStep = () =>
     navigation.navigate(ONBOARDING_LOOK_STEPS, {stepID: stepID + 1});
@@ -45,7 +45,7 @@ const LookSteps = ({route, navigation}) => {
           lastStepId={steps[steps.length - 1].id}
           onForward={onForwardStep}
           onBehind={onBehindStep}
-          onFinish={goBackToHome}>
+          onFinish={goToCongratulations}>
           <Step key={currentStep.id}>
             <StepTitle>{currentStep.name}</StepTitle>
             <StepDescription>{currentStep.text}</StepDescription>
