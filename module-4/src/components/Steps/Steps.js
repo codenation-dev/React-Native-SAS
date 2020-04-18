@@ -27,9 +27,28 @@ const Steps = ({children, steps: [firstStep, ...nextSteps], onForward}) => {
     [firstStep.id, nextStep, nextSteps],
   );
 
+  const stepsToGoBack = React.useMemo(
+    () =>
+      nextSteps.reduce(
+        (nextStepsToGo, step, i) => ({
+          ...nextStepsToGo,
+          [step.id]: i === 0 ? firstStep : nextSteps[i - 1],
+        }),
+        {
+          [firstStep.id]: nextStep,
+        },
+      ),
+    [firstStep.id, nextStep, nextSteps],
+  );
+
   const nextCurrentStep = React.useMemo(() => stepsToGo[currentStep.id], [
     currentStep,
     stepsToGo,
+  ]);
+
+  const backCurrentStep = React.useMemo(() => stepsToGoBack[currentStep.id], [
+    currentStep,
+    stepsToGoBack,
   ]);
 
   const forwardStep = () => {
@@ -40,6 +59,10 @@ const Steps = ({children, steps: [firstStep, ...nextSteps], onForward}) => {
     }
   };
 
+  const backStep = () => {
+    setCurrentStep(backCurrentStep);
+  };
+
   return (
     <View style={styles.content}>
       <ScrollView
@@ -48,10 +71,9 @@ const Steps = ({children, steps: [firstStep, ...nextSteps], onForward}) => {
         {children({currentStep})}
       </ScrollView>
       <View style={styles.stepActions}>
+        <ForwardStep onForward={backStep}>VOLTAR</ForwardStep>
         <ForwardStep onForward={forwardStep}>
-          {nextCurrentStep.id === firstStep.id
-            ? 'VOLTAR AO INICIO'
-            : 'PROXIMO PASSO'}
+          {nextCurrentStep.id === firstStep.id ? 'FINALIZAR' : 'PROXIMO PASSO'}
         </ForwardStep>
       </View>
     </View>
