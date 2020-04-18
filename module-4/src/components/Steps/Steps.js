@@ -9,12 +9,23 @@ import ForwardStep from '../ForwardStep/ForwardStep';
 
 import {colors} from '../../styles';
 
-const Steps = ({children, onForward, currentStepId, lastStepId, onFinish}) => {
+const Steps = ({
+  children,
+  onForward,
+  onBehind,
+  currentStepId,
+  lastStepId,
+  onFinish,
+}) => {
   function Foward() {
     if (currentStepId === lastStepId) {
       return onFinish();
     }
     return onForward();
+  }
+
+  function Behind() {
+    onBehind();
   }
   return (
     <View style={styles.content}>
@@ -24,7 +35,11 @@ const Steps = ({children, onForward, currentStepId, lastStepId, onFinish}) => {
         {children}
       </ScrollView>
       <View style={styles.stepActions}>
-        <ForwardStep onForward={Foward}>
+        {Number(currentStepId) > 1 && (
+          <ForwardStep onClick={Behind}>ANTERIOR</ForwardStep>
+        )}
+
+        <ForwardStep onClick={Foward}>
           {currentStepId === lastStepId ? 'VOLTAR AO INICIO' : 'PROXIMO PASSO'}
         </ForwardStep>
       </View>

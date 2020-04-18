@@ -29,6 +29,9 @@ const LookSteps = ({route, navigation}) => {
   const onForwardStep = () =>
     navigation.navigate(ONBOARDING_LOOK_STEPS, {stepID: stepID + 1});
 
+  const onBehindStep = () =>
+    navigation.navigate(ONBOARDING_LOOK_STEPS, {stepID: stepID - 1});
+
   const currentStep = steps.find(step => step.id === String(stepID));
 
   return (
@@ -41,6 +44,7 @@ const LookSteps = ({route, navigation}) => {
           currentStepId={currentStep.id}
           lastStepId={steps[steps.length - 1].id}
           onForward={onForwardStep}
+          onBehind={onBehindStep}
           onFinish={goBackToHome}>
           <Step key={currentStep.id}>
             <StepTitle>{currentStep.name}</StepTitle>
