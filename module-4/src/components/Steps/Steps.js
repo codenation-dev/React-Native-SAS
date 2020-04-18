@@ -9,49 +9,38 @@ import ForwardStep from '../ForwardStep/ForwardStep';
 
 import {colors} from '../../styles';
 
-const Steps = ({children, steps: [firstStep, ...nextSteps], onForward}) => {
-  const [currentStep, setCurrentStep] = React.useState(firstStep);
-  const [nextStep] = nextSteps;
-
-  const stepsToGo = React.useMemo(
-    () =>
-      nextSteps.reduce(
-        (nextStepsToGo, step, i) => ({
-          ...nextStepsToGo,
-          [step.id]: i < nextSteps.length - 1 ? nextSteps[i + 1] : firstStep,
-        }),
-        {
-          [firstStep.id]: nextStep,
-        },
-      ),
-    [firstStep.id, nextStep, nextSteps],
-  );
-
-  const nextCurrentStep = React.useMemo(() => stepsToGo[currentStep.id], [
-    currentStep,
-    stepsToGo,
-  ]);
-
-  const forwardStep = () => {
-    setCurrentStep(nextCurrentStep);
-
-    if (onForward) {
-      onForward(nextCurrentStep);
+const Steps = ({
+  children,
+  onForward,
+  onBehind,
+  currentStepId,
+  lastStepId,
+  onFinish,
+}) => {
+  function Foward() {
+    if (currentStepId === lastStepId) {
+      return onFinish();
     }
-  };
+    return onForward();
+  }
 
+  function Behind() {
+    onBehind();
+  }
   return (
     <View style={styles.content}>
       <ScrollView
         style={styles.steps}
         contentInsetAdjustmentBehavior="automatic">
-        {children({currentStep})}
+        {children}
       </ScrollView>
       <View style={styles.stepActions}>
-        <ForwardStep onForward={forwardStep}>
-          {nextCurrentStep.id === firstStep.id
-            ? 'VOLTAR AO INICIO'
-            : 'PROXIMO PASSO'}
+        {Number(currentStepId) > 1 && (
+          <ForwardStep onClick={Behind}>ANTERIOR</ForwardStep>
+        )}
+
+        <ForwardStep onClick={Foward}>
+          {currentStepId === lastStepId ? 'FINALIZAR' : 'PROXIMO PASSO'}
         </ForwardStep>
       </View>
     </View>
@@ -75,7 +64,7 @@ const styles = {
     height: 90,
     backgroundColor: colors.primary,
     flexDirection: 'row',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 15,
   },

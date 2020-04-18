@@ -15,7 +15,8 @@ import {ONBOARDING_LOOK_STEPS} from '../../router/routes';
 import {color} from '../../styles';
 
 const Welcome = ({navigation}) => {
-  const goToLookSteps = () => navigation.navigate(ONBOARDING_LOOK_STEPS);
+  const goToLookSteps = () =>
+    navigation.navigate(ONBOARDING_LOOK_STEPS, {stepID: 1});
 
   return (
     <React.Fragment>
