@@ -1,0 +1,35 @@
+{
+  "name": "AceleraDevModulo1",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "postinstall": "cp .rndebuggerrc ~/.rndebuggerrc && rndebugger-open",
+    "start": "react-native start",
+    "test": "jest --verbose --runInBand --coverage",
+    "test:watch": "jest --verbose --watch",
+    "test:cache": "jest --clear-cache",
+    "lint": "eslint .",
+    "android:ports": "adb reverse tcp:8081 tcp:8081 && adb reverse tcp:8097 tcp:8097",
+    "open:debugger": "rndebugger-open --open --port 8081"
+  },
+  "dependencies": {
+    "react": "16.9.0",
+    "react-native": "0.61.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/runtime": "^7.6.2",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.5.1",
+    "eslint-plugin-jest": "^23.8.1",
+    "jest": "^24.9.0",
+    "jest-junit": "^10.0.0",
+    "metro-react-native-babel-preset": "^0.56.0",
+    "react-native-debugger-open": "^0.3.24",
+    "react-test-renderer": "16.9.0"
+  },
+  "peerDependencies": {
+    "minimist": "^1.2.5"
+  }
+}
