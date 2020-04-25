@@ -1,4 +1,4 @@
-# Componentes e estilos React Native
+# Estilos avançados e animações
 
 > Leia atentamente as instruções abaixo, pois elas te
 levarão a encontrar a resolução esperada para o desafio
@@ -8,10 +8,13 @@ Tópicos
 
 Com esse desafio, você aprenderá:
 
-- Criar e a estruturar as telas da sua aplicação
-- Estruturar a navegação da sua aplicação através de routers
-- Criar a arquitetura de rotas da sua aplicação
-- Criar routers e navegações com [React Navigation](https://reactnavigation.org/)
+- Usar estilos mais avançados da API [StyleSheet](https://reactnative.dev/docs/stylesheet)
+do React Native
+- Usar [styled components](https://www.styled-components.com) para criar componentes com seus
+estilos diretamente ligados
+- Criar animações entre componentes com Animated API do React Native
+- Usar animações com o Lottie através de animações pré-existentes no 
+[LottieFiles](https://lottiefiles.com/)
 
 Requisitos
 ---
@@ -20,27 +23,30 @@ Este projeto é um aplicativo usado para mostrar os passos esperados
 que os integrantes do programa #AceleraDev de React Native precisam
 realizar antes de iniciar as aulas. Essas informações estão todas na
 aplicação, de forma estática, através de um arquivo JSON no código,
-que está sendo usado para apresentar todos os passos à serem realizados
-com seus respectivos textos e instruções. Mas a composição do aplicativo
-não é apenas mostrar os passos e instruções para os integrantes do
-programa, mas também para interagir com o integrante através de mensagens
-de boas vindas.
+que está sendo lido na aplicação, e apresentado somente os passos
+à serem realizados com seus respectivos textos, porém as
+funcionalidades desenvolvidas estão incompletas, pois estão
+faltando algumas animações nos comportamentos da aplicação.
 
-Porém, essa interação com o integrante ainda está incompleta, pois o
-o aplicativo no momento, está com suas funcionalidades de navegação da
-aplicação incompletas. Por essa razão, o objetivo desse desafio é que vocês consigam
-evoluir essa navegação da aplicação, com a construção de novas funcionalidades
-de navegação utilizando o router react navigation.
+Então, o objetivo é que com esse desafio você consiga introduzir
+novos comportamentos de animações as funcionalidades existentes.
+Assim, completando as funcionalidades, através do conhecimento
+adquirido de animações em React Native e das fontes de referência
+da aula.
 
 ### Tarefas
 
-- [ ] Transformar tela dos passos a serem completados para uma tela apenas,
-referente ao passo atual
+- [ ] Adicionar animação de transição entre a mudança de um passo
+para outro usando o efeito que arraste o passo atual para o lado
+esquerdo e o proximo passo, para direita.
 
-- [ ] Criar a funcionalidade de voltar para passo anterior na tela do passo
-a ser cumprido
+- [ ] Mudar o tamanho de todas as fontes usadas pelos componentes na
+aplicação (os tamanhos devem diminuir 25%), através das definições do
+tema usado via styled-components.
 
-- [ ] Criar nova tela de parabéns após ter completado as instruções
+- [ ] Alterar a animação de loading usada na transição da tela inicial
+do onboarding para a tela para completar os passos do onboarding
+(`<Loading />`), por uma animação pronta do Lottie. 
 
 Instruções
 ---
@@ -129,22 +135,21 @@ que já existem.
 |   └── App.js # Representação da aplicação a ser renderizada
 |   └── config.js # Definições das variáveis e configurações de ambiente
 |   └── styles.js Definições e configurações de estilos da aplicação
+|   └── theme.js # Definições do tema de estilos da aplicação
 |   └── steps.json # Arquivo JSON estático com os passos e instruções do programa, à serem mostrados no app
-|   ├── assets/ # Pasta de conteúdos de representação estáticas, como imagens
+|   ├── assets/ # Pasta de conteúdos de representação estáticas, como imagens 
 |   ├── components/ # Todos componentes reutilizáveis da aplicação 
+|       └── Home/ # Tela inicial de boas vindas ao programa
+|       └── LookSteps/ # Tela para completar os passos correspondentes
+|       └── Header/ # Cabeçalho correspondente através da imagem
+|       └── Content/ # Conteúdo de uma tela
 |       └── Steps/ # Passos a serem completados, correspondentes ao fluxo uni-direcional de passos no onboarding
 |       └── Step/ # Passo atual correspondente a ser completado no onboarding
 |       └── ForwardStep/ # Botão responsável por avançar os passos
 |       └── StepTitle/ # Titulo de um passo passo a ser completado no onboarding
 |       └── StepDescription/ # Descrição de um passo a ser completado no onboarding
-|   ├── router/ # Estrutura de routers da aplicação
-|       └── AppRouter # Router principal responsável por renderizar toda a estrutura de navegação
-|       └── routes # Nomes das rotas usados para identificar unicamente cada rota
-|       └── routers/ # Routers separados por contexto de navegação
-|           └── OnboardingRouter # Router responsável por gerenciar as rotas de onboarding do usuario ao programa AceleraDev
-|   ├── screens/ # Todas as telas renderizadas pelos routers
-|       └── LoookSteps/ # Tela responsável pelo fluxo de passos do usuario
-|       └── Welcome/ # Tela de boas vindas ao aplicativo e ao fluxo de onboarding
+|       └── Loading/ # Indicação de carregamento que cobre toda a tela 
+|       └── FadeIn/ # Animação de fade-in incorporada 
 ```
 
 - Você pode usar os testes pra lhe auxiliar no desenvolvimento
