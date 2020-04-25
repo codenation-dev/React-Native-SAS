@@ -32,7 +32,7 @@ const Steps = ({children, steps: [firstStep, ...nextSteps], onForward}) => {
       nextSteps.reduce(
         (nextStepsToGo, step, i) => ({
           ...nextStepsToGo,
-          [step.id]: i < 1 ? firstStep : nextSteps[i - 1],
+          [step.id]: i === 0 ? firstStep : nextSteps[i - 1],
         }),
         {
           [firstStep.id]: nextStep,
