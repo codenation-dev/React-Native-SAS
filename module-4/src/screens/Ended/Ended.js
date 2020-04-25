@@ -9,13 +9,9 @@ import Title from '../../components/Title/Title';
 import Header from '../../components/Header/Header';
 import Content from '../../components/Content/Content';
 
-import {ONBOARDING_LOOK_STEPS} from '../../router/routes';
-
 import {color} from '../../styles';
 
 const Welcome = ({navigation}) => {
-  const goToLookSteps = () => navigation.navigate(ONBOARDING_LOOK_STEPS);
-
   return (
     <React.Fragment>
       <Header />

@@ -1,0 +1,4 @@
+#Sat Apr 25 08:39:37 BRT 2020
+base.0=/home/wiliam/Documents/projects/app/codenation/React-Native-SAS/module-4/android/app/build/intermediates/transforms/dexMerger/debug/0
+renamed.0=classes.dex
+path.0=classes.dex

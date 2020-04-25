@@ -32,7 +32,10 @@ aplicação incompletas. Por essa razão, o objetivo desse desafio é que vocês
 evoluir essa navegação da aplicação, com a construção de novas funcionalidades
 de navegação utilizando o router react navigation.
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 ### Tarefas
 
 - [ ] Transformar tela dos passos a serem completados para uma tela apenas,

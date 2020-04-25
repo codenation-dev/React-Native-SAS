@@ -24,7 +24,7 @@ const Steps = ({children, steps: [firstStep, ...nextSteps], onForward}) => {
           [firstStep.id]: nextStep,
         },
       ),
-    [firstStep.id, nextStep, nextSteps],
+    [firstStep, nextStep, nextSteps],
   );
 
   const stepsToGoBack = React.useMemo(
@@ -38,7 +38,7 @@ const Steps = ({children, steps: [firstStep, ...nextSteps], onForward}) => {
           [firstStep.id]: nextStep,
         },
       ),
-    [firstStep.id, nextStep, nextSteps],
+    [firstStep, nextStep, nextSteps],
   );
 
   const nextCurrentStep = React.useMemo(() => stepsToGo[currentStep.id], [

@@ -14,7 +14,7 @@ import Subtitle from '../../components/Subtitle/Subtitle';
 import StepInstructions from '../../components/StepInstructions/StepInstructions';
 import StepInstruction from '../../components/StepInstruction/StepInstruction';
 
-import {ONBOARDING_ENDED} from '../../router/routes';
+import {ONBOARDING_HOME} from '../../router/routes';
 
 import {color} from '../../styles';
 
@@ -22,7 +22,7 @@ import steps from '../../steps.json';
 
 const LookSteps = ({navigation}) => {
   const goBackToHome = () =>
-    navigation.navigate(ONBOARDING_ENDED, {isStepsCompleted: true});
+    navigation.navigate(ONBOARDING_HOME, {isStepsCompleted: true});
 
   const onForwardStep = nextStep =>
     steps.indexOf(nextStep) === 0 && goBackToHome();
