@@ -13,6 +13,7 @@
     "test:cache": "jest --clear-cache",
     "lint": "eslint .",
     "android:ports": "adb reverse tcp:8081 tcp:8081 && adb reverse tcp:8097 tcp:8097",
+    "android:shake": "adb shell input keyevent 82",
     "open:debugger": "rndebugger-open --open --port 8081",
     "open:xcode": "open ios/AceleraDevModulo4.xcworkspace"
   },
