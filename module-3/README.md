@@ -36,17 +36,17 @@ da aula.
 
 ### Tarefas
 
-- [ ] Adicionar animação de transição entre a mudança de um passo
+- [x] ~~Adicionar animação de transição entre a mudança de um passo
 para outro usando o efeito que arraste o passo atual para o lado
-esquerdo e o proximo passo, para direita.
+esquerdo e o proximo passo, para direita.~~
 
-- [ ] Mudar o tamanho de todas as fontes usadas pelos componentes na
+- [x] ~~Mudar o tamanho de todas as fontes usadas pelos componentes na
 aplicação (os tamanhos devem diminuir 25%), através das definições do
-tema usado via styled-components.
+tema usado via styled-components.~~
 
-- [ ] Alterar a animação de loading usada na transição da tela inicial
+- [x] ~~Alterar a animação de loading usada na transição da tela inicial
 do onboarding para a tela para completar os passos do onboarding
-(`<Loading />`), por uma animação pronta do Lottie. 
+(`<Loading />`), por uma animação pronta do Lottie.~~ 
 
 Instruções
 ---

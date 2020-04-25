@@ -10,7 +10,7 @@ import LookSteps from './components/LookSteps/LookSteps';
 import Home from './components/Home/Home';
 import Loading from './components/Loading/Loading';
 
-import theme from './theme';
+import {main as theme} from './theme';
 
 import {PLATFORM} from './config';
 
@@ -38,7 +38,7 @@ const App = () => {
     setTimeout(() => {
       setStepsAsLoading(false);
       setAsLookingSteps(true);
-    }, 1500);
+    }, 2000);
   };
 
   const finishLookingToSteps = () => {
@@ -54,10 +54,10 @@ const App = () => {
           {!isLookingSteps && (
             <Home onStart={startLookingToSteps} isFinished={isStepsFinished} />
           )}
-          {isLoadingSteps && <Loading />}
           {isLookingSteps && !isStepsFinished && (
             <LookSteps onFinish={finishLookingToSteps} />
           )}
+          <Loading isLoading={isLoadingSteps} />
         </ThemeProvider>
       </SafeArea>
     </React.Fragment>

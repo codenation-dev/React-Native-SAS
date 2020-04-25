@@ -14,6 +14,9 @@ import Header from '../Header/Header';
 import Content from '../Content/Content';
 import StepInstructions from '../StepInstructions/StepInstructions';
 import StepInstruction from '../StepInstruction/StepInstruction';
+import SlideHorizontal, {
+  ANIMATION_DURATION as SLIDE_HORIZONTAL_DURATION,
+} from '../SlideHorizontal/SlideHorizontal';
 
 import steps from '../../steps.json';
 
@@ -23,10 +26,21 @@ const HeaderTitle = styled(Subtitle)`
 `;
 
 const LookSteps = ({onFinish}) => {
-  const onForwardStep = currentStep => {
+  const [currentStep, setCurrentStep] = React.useState(steps[0]);
+  const [isAnimating, setAsAnimating] = React.useState(false);
+
+  const onForwardStep = nextStep => {
     if (steps.indexOf(currentStep) === steps.length - 1) {
       onFinish();
+      return;
     }
+
+    setAsAnimating(true);
+
+    setTimeout(() => {
+      setAsAnimating(false);
+      setCurrentStep(nextStep);
+    }, SLIDE_HORIZONTAL_DURATION);
   };
 
   return (
@@ -35,8 +49,11 @@ const LookSteps = ({onFinish}) => {
         <HeaderTitle>Bem-vindo ao programa</HeaderTitle>
       </Header>
       <Content>
-        <Steps steps={steps} onForward={onForwardStep}>
-          {({currentStep}) => (
+        <Steps
+          steps={steps}
+          currentStep={currentStep}
+          onForward={onForwardStep}>
+          <SlideHorizontal isActive={isAnimating}>
             <Step key={currentStep.id}>
               <StepTitle>{currentStep.name}</StepTitle>
               <StepDescription>{currentStep.text}</StepDescription>
@@ -47,7 +64,7 @@ const LookSteps = ({onFinish}) => {
                 )}
               />
             </Step>
-          )}
+          </SlideHorizontal>
         </Steps>
       </Content>
     </React.Fragment>

@@ -33,44 +33,35 @@ const Actions = styled.View`
   padding-horizontal: 15px;
 `;
 
-const Steps = ({children, steps: [firstStep, ...nextSteps], onForward}) => {
-  const [currentStep, setCurrentStep] = React.useState(firstStep);
-  const [nextStep] = nextSteps;
-
+const Steps = ({children, currentStep, steps, onForward}) => {
   const stepsToGo = React.useMemo(
     () =>
-      nextSteps.reduce(
+      steps.reduce(
         (nextStepsToGo, step, i) => ({
           ...nextStepsToGo,
-          [step.id]: i < nextSteps.length - 1 ? nextSteps[i + 1] : firstStep,
+          [step.id]: i < steps.length - 1 ? steps[i + 1] : step,
         }),
-        {
-          [firstStep.id]: nextStep,
-        },
+        {},
       ),
-    [firstStep, nextStep, nextSteps],
+    [steps],
   );
 
-  const nextStepAsCurrent = React.useMemo(() => stepsToGo[currentStep.id], [
+  const nextStep = React.useMemo(() => stepsToGo[currentStep.id], [
     currentStep,
     stepsToGo,
   ]);
 
   const forwardStep = () => {
-    setCurrentStep(nextStepAsCurrent);
-
-    if (onForward) {
-      onForward(currentStep);
-    }
+    onForward && onForward(nextStep);
   };
 
   return (
     <Content>
-      <Scroll>{children({currentStep})}</Scroll>
+      <Scroll>{children}</Scroll>
       <Actions>
         <ForwardStep onForward={forwardStep}>
-          {nextStepAsCurrent.id === firstStep.id
-            ? 'VOLTAR AO INICIO'
+          {currentStep.id === nextStep.id
+            ? 'FINALIZAR PASSOS'
             : 'PROXIMO PASSO'}
         </ForwardStep>
       </Actions>

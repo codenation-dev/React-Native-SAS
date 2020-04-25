@@ -2,9 +2,9 @@
  * @flow
  */
 
-import {colors, fontSizes} from './styles';
+import {colors, fontSizes} from '../styles';
 
-const theme = {
+const main = {
   colors: {
     primary: colors.primary,
     secondary: colors.secondary,
@@ -16,6 +16,7 @@ const theme = {
   },
   font: {
     sizes: {
+      tiny: fontSizes.tiny,
       small: fontSizes.small,
       medium: fontSizes.medium,
       large: fontSizes.large,
@@ -23,4 +24,4 @@ const theme = {
   },
 };
 
-export default theme;
+export default main;

@@ -17,6 +17,7 @@ const Step = styled.View`
 const Instruction = styled.Text`
   flex: 1;
   margin-horizontal: 10px;
+  font-size: ${props => props.theme.font.sizes.tiny}px;
 
   ${props =>
     props.isCompleted &&

@@ -5,8 +5,6 @@
 import * as React from 'react';
 import styled, {css} from 'styled-components';
 
-import {colors} from '../../styles';
-
 const Touchable = styled.TouchableHighlight`
   padding: 15px;
 
@@ -43,6 +41,7 @@ const Touchable = styled.TouchableHighlight`
 
 const TouchableText = styled.Text`
   font-weight: bold;
+  font-size: ${props => props.theme.font.sizes.small}px;
 
   ${props =>
     props.light &&

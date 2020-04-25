@@ -3,8 +3,10 @@
  */
 
 import * as React from 'react';
-import {ActivityIndicator, Dimensions} from 'react-native';
-import styled, {ThemeContext} from 'styled-components';
+import {Dimensions} from 'react-native';
+import styled from 'styled-components';
+
+import Spinner from '../Spinner/Spinner';
 
 const dimensions = Dimensions.get('window');
 
@@ -13,24 +15,20 @@ const Content = styled.View`
   height: ${dimensions.height}px;
   justify-content: center;
   align-content: center;
-  background: ${props => props.theme.colors.light};
+  background: ${props => props.color || props.theme.colors.primary};
   position: absolute;
   top: 0;
   left: 0;
 `;
 
-const Loading = ({isLoading, children}) => {
-  const theme = React.useContext(ThemeContext);
-
+const Loading = ({isLoading, color, children}) => {
   return (
-    <Content>
-      <ActivityIndicator
-        size="large"
-        animating={isLoading}
-        color={theme.colors.primary}
-      />
-      {children}
-    </Content>
+    isLoading && (
+      <Content color={color}>
+        <Spinner />
+        {children}
+      </Content>
+    )
   );
 };
 
