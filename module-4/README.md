@@ -32,7 +32,6 @@ aplicação incompletas. Por essa razão, o objetivo desse desafio é que vocês
 evoluir essa navegação da aplicação, com a construção de novas funcionalidades
 de navegação utilizando o router react navigation.
 
-
 ### Tarefas
 
 - [ ] Transformar tela dos passos a serem completados para uma tela apenas,
@@ -127,18 +126,25 @@ que já existem.
 ```unicode
 .
 ├── src/
-|   └── App.js # Componente responsável por renderizar a aplicação
-|   └── config.js # Arquivo com variáveis de configuração de ambiente
-|   └── styles.js # Arquivo com as definições e configurações de estilos da aplicação
+|   └── App.js # Representação da aplicação a ser renderizada
+|   └── config.js # Definições das variáveis e configurações de ambiente
+|   └── styles.js Definições e configurações de estilos da aplicação
 |   └── steps.json # Arquivo JSON estático com os passos e instruções do programa, à serem mostrados no app
-|   ├── router/ # Estrutura de routers da aplicação 
+|   ├── assets/ # Pasta de conteúdos de representação estáticas, como imagens
 |   ├── components/ # Todos componentes reutilizáveis da aplicação 
-|       └── LoookSteps/ # Componente responsável por renderizar o fluxo de passos
-|       └── Step/ # Componente responsável por renderizar cada passo
-|       └── StepDescription/ # Componente responsável por renderizar a descrição do passo
-|       └── StepTitle/ # Componente responsável por renderizar o titulo do passo
-|       └── Steps/ # Componente responsável por renderizar todos os passos através de um fluxo uni-direcional
+|       └── Steps/ # Passos a serem completados, correspondentes ao fluxo uni-direcional de passos no onboarding
+|       └── Step/ # Passo atual correspondente a ser completado no onboarding
 |       └── ForwardStep/ # Botão responsável por avançar os passos
+|       └── StepTitle/ # Titulo de um passo passo a ser completado no onboarding
+|       └── StepDescription/ # Descrição de um passo a ser completado no onboarding
+|   ├── router/ # Estrutura de routers da aplicação
+|       └── AppRouter # Router principal responsável por renderizar toda a estrutura de navegação
+|       └── routes # Nomes das rotas usados para identificar unicamente cada rota
+|       └── routers/ # Routers separados por contexto de navegação
+|           └── OnboardingRouter # Router responsável por gerenciar as rotas de onboarding do usuario ao programa AceleraDev
+|   ├── screens/ # Todas as telas renderizadas pelos routers
+|       └── LoookSteps/ # Tela responsável pelo fluxo de passos do usuario
+|       └── Welcome/ # Tela de boas vindas ao aplicativo e ao fluxo de onboarding
 ```
 
 - Você pode usar os testes pra lhe auxiliar no desenvolvimento
