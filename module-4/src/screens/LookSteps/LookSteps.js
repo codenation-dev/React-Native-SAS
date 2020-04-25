@@ -14,7 +14,7 @@ import Subtitle from '../../components/Subtitle/Subtitle';
 import StepInstructions from '../../components/StepInstructions/StepInstructions';
 import StepInstruction from '../../components/StepInstruction/StepInstruction';
 
-import {ONBOARDING_HOME} from '../../router/routes';
+import {ONBOARDING_HOME, ONBOARDING_ENDED} from '../../router/routes';
 
 import {color} from '../../styles';
 
@@ -24,8 +24,8 @@ const LookSteps = ({navigation}) => {
   const goBackToHome = () =>
     navigation.navigate(ONBOARDING_HOME, {isStepsCompleted: true});
 
-  const onForwardStep = nextStep =>
-    steps.indexOf(nextStep) === 0 && goBackToHome();
+  const goToCongrats = () =>
+    navigation.navigate(ONBOARDING_ENDED, {isStepsCompleted: true});
 
   return (
     <React.Fragment>
@@ -33,7 +33,7 @@ const LookSteps = ({navigation}) => {
         <Subtitle color={color.light}>Bem-vindo ao programa</Subtitle>
       </Header>
       <Content>
-        <Steps steps={steps} onForward={onForwardStep}>
+        <Steps steps={steps} backHome={goBackToHome} onFinish={goToCongrats}>
           {({currentStep}) => (
             <Step key={currentStep.id}>
               <StepTitle>{currentStep.name}</StepTitle>
