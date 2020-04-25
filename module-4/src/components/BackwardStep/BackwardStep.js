@@ -9,9 +9,9 @@ import Button from '../Button/Button';
 
 import {color, sizes, getFontSizeStyle, getFontColorStyle} from '../../styles';
 
-const ForwardStep = ({children, onForward}) => {
+const BackwardStep = ({children, onBackward}) => {
   return (
-    <Button style={styles.text} onPress={onForward}>
+    <Button style={styles.text} onPress={onBackward}>
       {children}
     </Button>
   );
@@ -22,9 +22,9 @@ const styles = {
     {
       fontWeight: '600',
     },
-    getFontColorStyle(color.white),
+    getFontColorStyle(color.light),
     getFontSizeStyle(sizes.small),
   ]),
 };
 
-export default ForwardStep;
+export default BackwardStep;

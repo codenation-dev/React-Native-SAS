@@ -38,6 +38,8 @@ const styles = {
     margin: 0,
     padding: 15,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 };
 

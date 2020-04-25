@@ -10,12 +10,12 @@ import Button from '../../components/Button/Button';
 import Header from '../../components/Header/Header';
 import Content from '../../components/Content/Content';
 
-import {ONBOARDING_LOOK_STEPS} from '../../router/routes';
+import {ONBOARDING_LOOK_STEP} from '../../router/routes';
 
 import {color} from '../../styles';
 
 const Welcome = ({navigation}) => {
-  const goToLookSteps = () => navigation.navigate(ONBOARDING_LOOK_STEPS);
+  const goToLookSteps = () => navigation.navigate(ONBOARDING_LOOK_STEP);
 
   return (
     <React.Fragment>

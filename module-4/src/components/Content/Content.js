@@ -5,12 +5,8 @@
 import * as React from 'react';
 import {View} from 'react-native';
 
-const Content = ({children}) => {
-  return (
-    <View style={styles.body}>
-      {children}
-    </View>
-  );
+const Content = ({children, style}) => {
+  return <View style={[styles.body, style]}>{children}</View>;
 };
 
 const styles = {

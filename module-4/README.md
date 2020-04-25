@@ -34,13 +34,13 @@ de navegação utilizando o router react navigation.
 
 ### Tarefas
 
-- [ ] Transformar tela dos passos a serem completados para uma tela apenas,
-referente ao passo atual
+- [x] ~~Transformar tela dos passos a serem completados para uma tela apenas,
+referente ao passo atual~~
 
-- [ ] Criar a funcionalidade de voltar para passo anterior na tela do passo
-a ser cumprido
+- [x] ~~Criar a funcionalidade de voltar para passo anterior na tela do passo
+a ser cumprido~~
 
-- [ ] Criar nova tela de parabéns após ter completado as instruções
+- [x] ~~Criar nova tela de parabéns após ter completado as instruções~~
 
 Instruções
 ---
@@ -143,8 +143,9 @@ que já existem.
 |       └── routers/ # Routers separados por contexto de navegação
 |           └── OnboardingRouter # Router responsável por gerenciar as rotas de onboarding do usuario ao programa AceleraDev
 |   ├── screens/ # Todas as telas renderizadas pelos routers
-|       └── LoookSteps/ # Tela responsável pelo fluxo de passos do usuario
+|       └── LoookStep/ # Tela responsável pelo fluxo de passos do usuario
 |       └── Welcome/ # Tela de boas vindas ao aplicativo e ao fluxo de onboarding
+|       └── Home/ # Tela inicial do aplicativo depois que os passos do onboarding estão concluídos
 ```
 
 - Você pode usar os testes pra lhe auxiliar no desenvolvimento
