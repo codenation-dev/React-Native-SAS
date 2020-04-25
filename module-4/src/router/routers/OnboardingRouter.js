@@ -18,7 +18,7 @@ import {
 const OnboardingStack = createStackNavigator();
 
 const options = {
-  header: () => null,
+  headerShown: false,
 };
 
 const OnboardingRouter = () => {
