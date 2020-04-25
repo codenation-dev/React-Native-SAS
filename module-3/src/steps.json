@@ -1,0 +1,86 @@
+[
+  {
+    "id": "1",
+    "name": "Configurar ambiente",
+    "text": "Para que seja possível avançar nos exercícios práticos das aulas e na conclusão dos desafios ao longo do programa, é necessário que você tenha todo o seu ambiente preparado para o desenvolvimento mobile.",
+    "instructions": [
+      {
+        "id": "1",
+        "text": "Acessar o documento de configuração no drive"
+      },
+      {
+        "id": "2",
+        "text": "Instalar e configurar todas ferramentas necesárias para Mobile"
+      },
+      {
+        "id": "3",
+        "text": "Inicializar uma aplicação react-native utilizando o comando init do CLI"
+      },
+      {
+        "id": "4",
+        "text": "Rodar perfeitamente a aplicação react native que você inicializou no passo anterior"
+      }
+    ]
+  },
+  {
+    "id":  "2",
+    "name": "Sincronizar CLI com plataforma da Codenation",
+    "text":  "Para que você consiga realizar o download do desaifo de cada módulo do programa, é necessário que você tenha devidamente configurado e sincronizado, em seu ambiente local, o CLI da Codenation com o seu acesso a plataforma, e assim também, enviar os desafio desenvolvidos, para que sua nota seja devidamente atualizada.",
+    "instructions": [
+      {
+        "id": "5",
+        "text": "Instalar localmente CLI da Codenation"
+      },
+      {
+        "id": "6",
+        "text": "Configurar sua conta da plataforma no CLI"
+      },
+      {
+        "id": "7",
+        "text": "Testar o download de um desafio da plataforma via CLI"
+      },
+      {
+        "id": "8",
+        "text": "Executar na sua máquina, o projeto que você baixou"
+      }
+    ]
+  },
+  {
+    "id":  "3",
+    "name": "Acessar meios de comunicação",
+    "text":  "Para que possamos manter uma comunicação direta e ativa, precisamos que você esteja conectado aos meios de comunicação destinados ao programa.",
+    "instructions": [
+      {
+        "id": "9",
+        "text": "Entrar no chat comunidade pela plataforma da Codenation"
+      },
+      {
+        "id": "10",
+        "text": "Compartilhar número de WhatsApp com o instrutor ou mentor, para entrar no grupo de WhatsApp da turma"
+      },
+      {
+        "id": "11",
+        "text": "Compartilhar email pessoal de conta do google com o instrutor ou mentor, para receber avisos, convites, acesso a conteúdos"
+      }
+    ]
+  },
+  {
+    "id":  "4",
+    "name": "Acessar as aulas",
+    "text":  "Para que você consiga acompanhar as aulas que já aconteceram, e vão acontecer, é importante que você tenha acesso aos slides das aulas.",
+    "instructions": [
+      {
+        "id": "12",
+        "text": "Receber invite no calendário do evento das aulas que vão acontecer com os links de acesso"
+      },
+      {
+        "id": "13",
+        "text": "Receber invite de acesso à pasta do drive com as aulas que já aconteceram"
+      },
+      {
+        "id": "14",
+        "text": "Receber acesso ao codigo das aulas"
+      }
+    ]
+  }
+]
