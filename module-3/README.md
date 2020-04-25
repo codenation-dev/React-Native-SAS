@@ -26,13 +26,13 @@ aplicação, de forma estática, através de um arquivo JSON no código,
 que está sendo lido na aplicação, e apresentado somente os passos
 à serem realizados com seus respectivos textos, porém as
 funcionalidades desenvolvidas estão incompletas, pois estão
-faltando alguns comportamentos de animações. 
+faltando algumas animações nos comportamentos da aplicação.
 
 Então, o objetivo é que com esse desafio você consiga introduzir
-novos comportamentos de animações as funcionalidades exsitentes.
-Assim, completando as funcionalidades, utilizando o conhecimento
-adquirido de animações do React Native aprendidos em aula, e
-através das fontes de referência passadas em aula.
+novos comportamentos de animações as funcionalidades existentes.
+Assim, completando as funcionalidades, através do conhecimento
+adquirido de animações em React Native e das fontes de referência
+da aula.
 
 ### Tarefas
 
@@ -138,17 +138,16 @@ que já existem.
 |   └── theme.js # Definições do tema de estilos da aplicação
 |   └── steps.json # Arquivo JSON estático com os passos e instruções do programa, à serem mostrados no app
 |   ├── assets/ # Pasta de conteúdos de representação estáticas, como imagens 
-|   ├── components/ # Pasta de componentes reutilizáveis da aplicação 
+|   ├── components/ # Todos componentes reutilizáveis da aplicação 
 |       └── Home/ # Tela inicial de boas vindas ao programa
 |       └── LookSteps/ # Tela para completar os passos correspondentes
 |       └── Header/ # Cabeçalho correspondente através da imagem
 |       └── Content/ # Conteúdo de uma tela
-|       └── Step/ # Passo atual correspondente a ser completado no onboarding
-|       └── StepDescription/ # Descrição de um passo a ser completado no onboarding
-|       └── StepTitle/ # Titulo de um passo passo a ser completado no onboarding
 |       └── Steps/ # Passos a serem completados, correspondentes ao fluxo uni-direcional de passos no onboarding
+|       └── Step/ # Passo atual correspondente a ser completado no onboarding
 |       └── ForwardStep/ # Botão responsável por avançar os passos
-|       └── Loading/ # Indicação de carregamento que cobre toda a tela 
+|       └── StepTitle/ # Titulo de um passo passo a ser completado no onboarding
+|       └── StepDescription/ # Descrição de um passo a ser completado no onboarding
 |       └── Loading/ # Indicação de carregamento que cobre toda a tela 
 |       └── FadeIn/ # Animação de fade-in incorporada 
 ```
