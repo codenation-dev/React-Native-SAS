@@ -33,6 +33,10 @@ const LookStep = ({navigation, route}) => {
     ],
   } = useOnboardingStorage();
 
+  const {
+    isFinished: [, finishOnboardingInCache],
+  } = useOnboardingCache();
+
   const [
     location,
     {getPosition, isPermitted: isLocationPermitted},
@@ -47,6 +51,16 @@ const LookStep = ({navigation, route}) => {
     isFirstStep,
     isLastStep,
   } = useOnboardingSteps(stepId, {location});
+
+  const isAllStepsCompleted = React.useMemo(
+    () =>
+      steps.every(step =>
+        step.instructions.every(instruction =>
+          instructionsCompletedInStorage.includes(instruction.id),
+        ),
+      ),
+    [steps, instructionsCompletedInStorage],
+  );
 
   React.useEffect(() => {
     isLocationPermitted && getPosition();
@@ -105,7 +119,11 @@ const LookStep = ({navigation, route}) => {
             </BackwardStep>
           )}
           {isLastStep ? (
-            <ForwardStep onForward={finishOnboarding}>FINALIZAR</ForwardStep>
+            <ForwardStep
+              onForward={finishOnboarding}
+              disabled={!isAllStepsCompleted}>
+              FINALIZAR
+            </ForwardStep>
           ) : (
             <ForwardStep onForward={forwardStep}>PROXIMO PASSO</ForwardStep>
           )}

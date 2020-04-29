@@ -12,7 +12,7 @@ export const useOnboardingCache = () => {
     updateOnboardingAsFinishedInCache,
   ] = useCache(ONBOARDING_IS_FINISHED_CACHE, false);
 
-  const finishOnboardingInCache = () => {};
+  const finishOnboardingInCache = () => updateOnboardingAsFinishedInCache(true);
 
   return {
     isFinished: [isOnboardingFinishedInCache, finishOnboardingInCache],

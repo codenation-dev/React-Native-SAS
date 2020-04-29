@@ -101,7 +101,9 @@ export const useGeolocation = () => {
     setLocation({latitude, longitude});
 
   const getPosition = () =>
-    getLocationPosition().catch(isDeniedError(() => setAsPermitted(false)));
+    getLocationPosition()
+      .then(coordinates => updateLocation(coordinates))
+      .catch(isDeniedError(() => setAsPermitted(false)));
 
   return [
     location,

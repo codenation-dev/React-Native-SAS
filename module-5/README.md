@@ -31,21 +31,21 @@ a localização do dispositivo dele.
 
 ### Tarefas
 
-- [ ] Permitir que o usuário apenas consiga finalizar o fluxo de passos de
+- [x] ~~Permitir que o usuário apenas consiga finalizar o fluxo de passos de
 onboarding quando ele completou todos as instruções de todos os passos (você
-pode desabilitar o botão)
+pode desabilitar o botão)~~
 
-- [ ] Ao o usuário abrir o apliciativo, verificar se ele já finalizou os passos
+- [x] ~~Ao o usuário abrir o apliciativo, verificar se ele já finalizou os passos
 de onboarding, para que caso, ele tá tenha os realizados, deve ser redirecionado
-diretamente, para a tela inicial do aplicativo.
+diretamente, para a tela inicial do aplicativo.~~
 
 **DICAS:**
 
 - verificar o código do [hook de cache de onboarding](./src/hooks/cache/useOnboardingCache.js)
 
-- [ ] Mostrar os passos a serem completados no onboarding da pessoa baseado
+- [x] ~~Mostrar os passos a serem completados no onboarding da pessoa baseado
 na distância entre a localização do dispositivo do usuário em relação a localização
-de disponibilidade de cada passo do onboarding, que deve ser menor que 500 km
+de disponibilidade de cada passo do onboarding, que deve ser menor que 500 km~~
 
 **DICAS:**
 

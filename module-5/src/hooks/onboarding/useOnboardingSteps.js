@@ -27,7 +27,8 @@ const getDistance = (
 
 // verifica se a distância entre a disponibilidade de um passo para ser mostrado está correta
 // baseada na distância permitida
-const isStepDistanceRight = location => step => true;
+const isStepDistanceRight = location => step =>
+  getDistance(location, step.availability.location) <= PERMITTED_DISTANCE;
 
 const defaultParams = {
   location: {},
