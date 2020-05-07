@@ -8,8 +8,14 @@ import {useNavigationState} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import Home from '../../screens/Home/Home';
+import ProfileScanner from '../../screens/ProfileScanner/ProfileScanner';
 
-import {ONBOARDING, ACCELERATION, ACCELERATION_HOME} from '../routes';
+import {
+  ONBOARDING,
+  ACCELERATION,
+  ACCELERATION_HOME,
+  ACCELERATION_PROFILE_SCANNER,
+} from '../routes';
 
 const AccelerationStack = createStackNavigator();
 
@@ -40,6 +46,10 @@ const AccelerationRouter = ({navigation}) => {
       initialRouteName={ACCELERATION_HOME}
       screenOptions={options}>
       <AccelerationStack.Screen name={ACCELERATION_HOME} component={Home} />
+      <AccelerationStack.Screen
+        name={ACCELERATION_PROFILE_SCANNER}
+        component={ProfileScanner}
+      />
     </AccelerationStack.Navigator>
   );
 };

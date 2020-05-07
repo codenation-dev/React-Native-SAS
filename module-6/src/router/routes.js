@@ -8,3 +8,4 @@ export const ONBOARDING_LOOK_STEP = `${ONBOARDING}/lookStep`;
 
 export const ACCELERATION = 'acceleration';
 export const ACCELERATION_HOME = `${ACCELERATION}/home`;
+export const ACCELERATION_PROFILE_SCANNER = `${ACCELERATION}/profileScanner`;
