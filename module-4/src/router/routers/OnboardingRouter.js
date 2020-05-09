@@ -7,8 +7,13 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import Welcome from '../../screens/Welcome/Welcome';
 import LookSteps from '../../screens/LookSteps/LookSteps';
+import Ended from '../../screens/Ended';
 
-import {ONBOARDING_HOME, ONBOARDING_LOOK_STEPS} from '../routes';
+import {
+  ONBOARDING_HOME,
+  ONBOARDING_LOOK_STEPS,
+  ONBOARDING_ENDED,
+} from '../routes';
 
 const OnboardingStack = createStackNavigator();
 
@@ -26,6 +31,7 @@ const OnboardingRouter = () => {
         name={ONBOARDING_LOOK_STEPS}
         component={LookSteps}
       />
+      <OnboardingStack.Screen name={ONBOARDING_ENDED} component={Ended} />
     </OnboardingStack.Navigator>
   );
 };

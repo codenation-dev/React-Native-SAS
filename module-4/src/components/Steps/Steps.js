@@ -1,43 +1,23 @@
-/**
- * @flow
- */
-
 import * as React from 'react';
 import {View, ScrollView, Dimensions} from 'react-native';
 
-import ForwardStep from '../ForwardStep/ForwardStep';
+import ButtonStep from '../ButtonStep/ButtonStep';
 
 import {colors} from '../../styles';
 
-const Steps = ({children, steps: [firstStep, ...nextSteps], onForward}) => {
-  const [currentStep, setCurrentStep] = React.useState(firstStep);
-  const [nextStep] = nextSteps;
+const Steps = ({children, steps, onFinish, backHome}) => {
+  const [stepIndex, setNextStepIndex] = React.useState(0);
 
-  const stepsToGo = React.useMemo(
-    () =>
-      nextSteps.reduce(
-        (nextStepsToGo, step, i) => ({
-          ...nextStepsToGo,
-          [step.id]: i < nextSteps.length - 1 ? nextSteps[i + 1] : firstStep,
-        }),
-        {
-          [firstStep.id]: nextStep,
-        },
-      ),
-    [firstStep.id, nextStep, nextSteps],
-  );
-
-  const nextCurrentStep = React.useMemo(() => stepsToGo[currentStep.id], [
-    currentStep,
-    stepsToGo,
-  ]);
+  const currentStep = steps[stepIndex];
+  const lastId = steps[steps.length - 1].id;
+  const lastStep = currentStep.id === lastId;
 
   const forwardStep = () => {
-    setCurrentStep(nextCurrentStep);
+    lastStep ? onFinish() : setNextStepIndex(stepIndex + 1);
+  };
 
-    if (onForward) {
-      onForward(nextCurrentStep);
-    }
+  const backwardStep = () => {
+    stepIndex === 0 ? backHome() : setNextStepIndex(stepIndex - 1);
   };
 
   return (
@@ -48,11 +28,10 @@ const Steps = ({children, steps: [firstStep, ...nextSteps], onForward}) => {
         {children({currentStep})}
       </ScrollView>
       <View style={styles.stepActions}>
-        <ForwardStep onForward={forwardStep}>
-          {nextCurrentStep.id === firstStep.id
-            ? 'VOLTAR AO INICIO'
-            : 'PROXIMO PASSO'}
-        </ForwardStep>
+        <ButtonStep onPress={backwardStep}>VOLTAR</ButtonStep>
+        <ButtonStep onPress={forwardStep}>
+          {lastStep ? 'FINALIZAR' : 'PROXIMO PASSO'}
+        </ButtonStep>
       </View>
     </View>
   );
