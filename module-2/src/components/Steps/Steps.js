@@ -11,6 +11,7 @@ import {colors} from '../../styles';
 
 const Steps = ({children, steps: [firstStep, ...nextSteps]}) => {
   const [currentStep, setCurrentStep] = React.useState(firstStep);
+  const [goToHome, setGoToHome] = React.useState(false);
   const [nextStep] = nextSteps;
 
   const stepsToGo = React.useMemo(
@@ -36,7 +37,9 @@ const Steps = ({children, steps: [firstStep, ...nextSteps]}) => {
 
   return (
     <View style={styles.content}>
-      <ScrollView style={styles.steps} contentInsetAdjustmentBehavior="automatic">
+      <ScrollView
+        style={styles.steps}
+        contentInsetAdjustmentBehavior="automatic">
         {children({currentStep})}
       </ScrollView>
       <View style={styles.stepActions}>
