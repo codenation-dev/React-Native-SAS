@@ -12,7 +12,8 @@
     "lint": "eslint .",
     "android:ports": "adb reverse tcp:8081 tcp:8081 && adb reverse tcp:8097 tcp:8097",
     "open:debugger": "rndebugger-open --open --port 8081",
-    "open:xcode": "open ios/AceleraDevModulo2.xcworkspace"
+    "open:xcode": "open ios/AceleraDevModulo2.xcworkspace",
+    "android": "react-native run-android"
   },
   "dependencies": {
     "react": "16.9.0",
