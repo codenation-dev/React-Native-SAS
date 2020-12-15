@@ -24,6 +24,7 @@ const Button = ({
   secondary,
   color: colorProp,
   onPress,
+  disabled,
 }) => {
   const colorStyle =
     getColorStyleByProps({
@@ -38,7 +39,7 @@ const Button = ({
       accessibilityRole="button"
       underlayColor="transparent"
       style={[styles.button, colorStyle.button]}
-      onPress={onPress}>
+      onPress={!disabled ? onPress : void 0}>
       <Text
         style={[
           style,

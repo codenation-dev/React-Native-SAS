@@ -9,9 +9,9 @@ import Button from '../Button/Button';
 
 import {color, sizes, getFontSizeStyle, getFontColorStyle} from '../../styles';
 
-const ForwardStep = ({children, onForward}) => {
+const ForwardStep = ({children, onForward, disabled}) => {
   return (
-    <Button style={styles.text} onPress={onForward}>
+    <Button style={styles.text} onPress={onForward} disabled={disabled}>
       {children}
     </Button>
   );

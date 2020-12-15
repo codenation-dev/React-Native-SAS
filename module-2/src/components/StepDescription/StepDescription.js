@@ -17,4 +17,3 @@ const StepDescription = ({children}) => {
 };
 
 export default StepDescription;
-
