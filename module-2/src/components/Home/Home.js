@@ -12,7 +12,11 @@ import Content from '../Content/Content';
 
 import {color} from '../../styles';
 
+import { StatusContext } from '../../App';
+
 const Home = ({onStart}) => {
+  const { block } = React.useContext(StatusContext)
+
   return (
     <React.Fragment>
       <Header />
@@ -26,9 +30,12 @@ const Home = ({onStart}) => {
             Aqui você vai encontrar os próximos passos que você precisa dar para
             estar tudo certo para iniciar as aulas do programa. Bora lá?!
           </Text>
-          <Button primary={true} onPress={onStart}>
-            VAMOS LÁ
-          </Button>
+          {
+            block ?
+            <Text>Parabéns, foi tudo finalizado!</Text>
+            : <Button primary={true} onPress={onStart}>VAMOS LÁ</Button> 
+          }
+          
         </View>
       </Content>
     </React.Fragment>

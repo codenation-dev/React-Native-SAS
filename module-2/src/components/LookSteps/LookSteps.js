@@ -11,6 +11,7 @@ import Steps from '../Steps/Steps';
 import Subtitle from '../Subtitle/Subtitle';
 import Header from '../Header/Header';
 import Content from '../Content/Content';
+import StepInstructions from '../StepInstructions/StepInstructions';
 
 import {color} from '../../styles';
 
@@ -28,6 +29,7 @@ const LookSteps = () => {
             <Step key={currentStep.id}>
               <StepTitle>{currentStep.name}</StepTitle>
               <StepDescription>{currentStep.text}</StepDescription>
+              <StepInstructions>{currentStep.instructions}</StepInstructions>  
             </Step>
           )}
         </Steps>
