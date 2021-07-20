@@ -23,7 +23,7 @@
     "@react-navigation/native": "^5.1.6",
     "@react-navigation/stack": "^5.2.11",
     "react": "16.9.0",
-    "react-native": "0.61.5",
+    "react-native": "0.62.3",
     "react-native-camera": "^3.23.1",
     "react-native-geolocation-service": "^4.0.0",
     "react-native-gesture-handler": "^1.6.1",
